@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500&family=Roboto:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@1,200&family=Nunito:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$dark-color:rgb(33,37,41);
+$light-color:#FFFFFF;
+$gray:gray;
+$light-blue:#297af4;
+$Nunito: 'Nunito', sans-serif;
+$Roboto: 'Roboto', sans-serif;
+$Barlow:'Barlow', sans-serif;
+
+@mixin flex($align,$justufy) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justufy;
+    
+}
+%fluid{
+         width: 80%;
+        margin: 0 auto;
+        height: auto;
+        @extend %flex-start;
+}
+
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%flex-start{
+    display: flex;
+    align-items: center;
+}
+body{
+    font-family: $Nunito;
+}
+nav{
+    background-color: $dark-color;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+.container-fluid{
+    @extend %fluid;
+}
+.container{
+    width: 100%;
+    height: auto;
+
+    
+    .container-fluid{
+        @extend %fluid;
+        .logo{
+            width: 50%;
+            height: 50px;
+            @extend %flex-start;
+            a{
+                color: $light-color;
+                font-size: 1.5rem;
+                font-family: $Roboto;
+            }
+        }
+
+        .navbar{
+            width: 50%;
+            height: 50px;
+            @extend %flex-center;
+
+            .nav-links{
+                ul{
+                    li{
+                        display: inline-block;
+                        padding: 10px 8px;
+
+                        a{
+                            color: $gray;
+                            font-size: 1rem;
+                            &:hover{
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+header{
+    
+    background-color: $dark-color;
+    padding: 100px 0;
+    .header{
+        width: 100%;
+        height: auto;
+        @extend %flex-center;
+
+        .header-text-area{
+            width: 60%;
+            height: auto;
+            @extend %flex-start;
+            flex-direction: column;
+
+            .header-text{
+                h1{
+                    font-size: 3.2rem;
+                    font-family: $Nunito;
+                    color: $light-color;
+                }
+                p{
+                    color: $gray;
+                    font-size: 1.2rem;
+                }
+            }
+            .header-btn{
+                width: 100%;
+                margin-top: 20px;
+                @extend %flex-start;
+
+                .get{
+                    padding: 12px 25px;
+                    font-size: 1.2rem;
+                    color: $light-color;
+                    border-radius: 5px;
+                    border: none;
+                    background-color: $light-blue;
+
+                    &:hover{
+                        opacity: 0.8;
+                    }
+                }
+                .more{
+                    padding: 12px 25px;
+                    font-size: 1.2rem;
+                    color: $light-color;
+                    border: 1px solid $light-color;
+                    border-radius: 5px;
+                    background-color: $dark-color;
+                    margin-left: 30px;
+
+                    &:hover{
+                        background-color: $light-color;
+                        color: black;
+                    }
+
+                }
+            }
+            
+        }
+        .header-img-container{
+            width: 40%;
+            height: auto;
+
+            .header-img{
+                width: 100%;
+                height: 250px;
+                background-color: #343A40;
+                border-radius: 7px;
+                @extend %flex-center;
+                
+                span{
+                    @extend %flex-center;
+                    font-size: 3rem;
+                    color: $gray;
+                }
+
+            }
+        }
+    }
+}
+
+
+    #title{
+        background-color: $light-color;
+        width: 100%;
+        padding: 100px 0;
+
+        .container-fluid{
+            @extend %fluid;
+            .title-text{
+                width: 40%;
+                height: auto;
+
+                h1{
+                    font-size: 2rem;
+                }
+            }
+            .title-cards-area{
+                width: 60%;
+                height: auto;
+                @include flex(flex-start,space-between );
+                flex-wrap: wrap;
+                .card{
+                    width: 47%;
+                    height: auto;
+                    margin-bottom: 25px;
+                    @include flex(flex-start,flex-start);
+                    flex-direction: column;
+
+                    .card-head{
+                        width: 50px;
+                        height: 50px;
+                        background-color:$light-blue;
+                        border-radius: 5px;
+                        @extend %flex-center;
+                        color: $light-color;
+                    }
+
+                    .card-title{
+                        margin-top: 15px;
+                        font-size: 0.8rem;
+                        color: $dark-color;
+                    }
+                    .card-body{
+                        margin-top: 15px;
+                        font-size: 1rem;
+                        font-weight: 100;
+                    }
+                }
+            }
+        }
+    }
+
+    #idea{
+        width: 100%;
+        height: auto;
+        padding: 100px 0;
+        @extend %flex-center;
+        background-color: #F8F9FA;
+        .idea-content{
+            @extend %flex-center;
+            flex-direction: column;
+            p{
+                width: 45%;
+                font-size: 1.5rem;
+                font-family: $Barlow;
+                font-weight: 800;
+            }
+
+            .author{
+                width: 100%;
+                margin-top: 30px;
+                @extend %flex-center;
+
+                .img{
+                    width: 40px;
+                    height: 40px;
+                    background-color: rgb(206,212,218);
+                    border-radius: 100%;
+                    @extend %flex-center;
+                    span{
+                        font-size: 0.5rem;
+                        color: rgb(158, 163, 168);
+                    }
+                }
+                strong{
+                    margin-left: 20px;
+                    font-weight: 700;
+
+                    span{
+                        color: $light-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    #blog{
+        width: 100%;
+        height: auto;
+        padding: 100px;
+        .container-fluid{
+            @extend %flex-center;
+            flex-direction: column;
+
+            .blog-head{
+                width: 45%;
+                @extend %flex-center;
+                flex-direction: column;
+                h1{
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+                p{
+                    text-align: center;
+                    font-size: 1.2rem;
+                    color: rgb(112, 107, 107);
+                }
+            }
+
+            .blog-cards{
+                width: 100%;
+                height: auto;
+                @include flex(center,space-between);
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin: 50px 0;
+                .card{
+                    width: 30%;
+                    height: auto;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+
+                    .head{
+                        width: 100%;
+                        height: 200px;
+                        background-color:#9fa3a7;
+                        @extend %flex-center;
+                        span{
+                            @extend %flex-center;
+                            font-size: 3rem;
+                            color: $gray;
+                        }
+                    }
+                    .body{
+                        margin: 30px 30px 0 30px;
+                        .icon{
+                            margin-bottom: 10px;
+                            a{
+                                padding: 0.35em 0.65em;
+                                font-size: 0.75em;
+                                font-family: $Roboto;
+                                border-radius: 10px;
+                                color: $light-color;
+                                background-color: $light-blue;
+                            }
+                        }
+                        h1{
+                            font-family: $Nunito;
+                            font-size: 1.6rem;
+                            margin-bottom: 10px;
+                        }
+                        p{
+                            margin-bottom: 50px;
+                        }
+
+                        .author-area{
+                            width: 100%;
+                            display: flex;
+
+                            .img{
+                                width: 40px;
+                                height: 40px;
+                                background-color: rgb(206,212,218);
+                                border-radius: 100%;
+                                @extend %flex-center;
+                                margin-right: 10px;
+                                span{
+                                    font-size: 0.5rem;
+                                    color: rgb(158, 163, 168);
+                                }
+                             }
+                        }
+                        .author{
+                            @include flex(flex-start,flex-start );
+                            flex-direction: column;
+                            p{
+                                font-size: 0.9rem;
+                                color: #9fa3a7;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
