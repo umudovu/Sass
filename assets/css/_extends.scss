@@ -1,0 +1,16 @@
+%fluid{
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    @extend %flex-start;
+}
+
+%flex-center{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+%flex-start{
+display: flex;
+align-items: center;
+}
